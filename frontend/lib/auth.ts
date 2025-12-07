@@ -1,7 +1,7 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 export const auth = {
-  async login(email, password) {
+  async login(email: string, password: string) {
     const formData = new FormData();
     formData.append("username", email);
     formData.append("password", password);
@@ -23,7 +23,7 @@ export const auth = {
     return data;
   },
 
-  async register(email, password, firstName, lastName) {
+  async register(email: string, password: string, firstName: string, lastName: string) {
     const params = new URLSearchParams({
         email: email,
         password: password,
