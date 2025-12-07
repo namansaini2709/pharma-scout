@@ -200,3 +200,5 @@ export default function PortfolioPage() {
     </div>
   );
 }
+
+// Added for forced Vercel rebuild
