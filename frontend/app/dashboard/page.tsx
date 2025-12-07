@@ -7,12 +7,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Activity, Globe, ShieldCheck, Database, FileText, ArrowLeft, Loader2, Download, Share2 } from "lucide-react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
+import dynamicLoader from "next/dynamic"; // Renamed to avoid collision
 import { ReportDocument } from "@/components/ReportPDF";
 import { auth } from "@/lib/auth"; // Import auth utility
 
 // Dynamic import for PDFDownloadLink to avoid SSR issues
-const PDFDownloadLink = dynamic(
+const PDFDownloadLink = dynamicLoader(
   () => import("@react-pdf/renderer").then((mod) => mod.PDFDownloadLink),
   {
     ssr: false,
