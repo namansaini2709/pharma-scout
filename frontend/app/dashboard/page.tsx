@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic"; // Force dynamic rendering to fix build error
+
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
