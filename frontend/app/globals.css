@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+  
+  --color-primary: #10b981;
+  --color-primary-foreground: #000000;
+  
+  --color-secondary: #3b82f6;
+  --color-secondary-foreground: #FFFFFF;
+  
+  --color-accent: #a855f7;
+  --color-accent-foreground: #FFFFFF;
+  
+  --color-warning: #f97316;
+  --color-warning-foreground: #000000;
+  
+  --color-border: #262626;
+  
+  --color-card: #1a1a1a;
+  --color-card-foreground: #fafafa;
+
+  /* Animation Keyframes */
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Custom Utilities */
+.animate-blob {
+  animation: blob 7s infinite;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-input {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  overflow-x: hidden; /* Prevent scroll from blobs */
+}
+
+#_next,
+#__next-global-css,
+#__next {
+  height: 100%;
+}
