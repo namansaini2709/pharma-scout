@@ -30,6 +30,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# --- Health Check Endpoint ---
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 # --- Database Initialization (Run once on startup) ---
 @app.on_event("startup")
 def on_startup():
