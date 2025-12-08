@@ -19,6 +19,15 @@ from typing import List # ADDED THIS LINE
 
 app = FastAPI()
 
+# --- Health Check Endpoints ---
+@app.get("/")
+def read_root():
+    return {"status": "ok", "message": "Pharma Scout API is running"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 # --- CORS Configuration ---
 origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
 
@@ -30,10 +39,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# --- Health Check Endpoint ---
-@app.get("/health")
-def health_check():
-    return {"status": "ok"}
+
 
 # --- Database Initialization (Run once on startup) ---
 @app.on_event("startup")
