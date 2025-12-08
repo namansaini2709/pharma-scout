@@ -101,15 +101,7 @@ export default function PortfolioPage() {
             <span className="text-sm font-medium text-zinc-400">New Search</span>
        </Link>
 
-// --- User Profile Floating Tab ---
-       <div className="fixed top-28 right-6 z-40 flex items-center space-x-2 px-4 py-2 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl shadow-lg">
-            <div className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold text-zinc-400 border border-white/10">
-                {user?.first_name?.[0]}{user?.last_name?.[0]}
-            </div>
-            <span className="text-sm font-medium text-white">
-                {user?.first_name} {user?.last_name}
-            </span>
-       </div>
+
 
       <main className="relative z-10 max-w-5xl mx-auto px-6 pt-32"> {/* Increased pt to make space for floating tabs */}
         

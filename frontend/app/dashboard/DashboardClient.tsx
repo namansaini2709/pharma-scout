@@ -169,17 +169,16 @@ export default function DashboardClient() {
     <div className="min-h-screen bg-background pb-20 overflow-x-hidden selection:bg-primary/30 pt-24">
        <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-5 z-0" />
       
-      <div className="sticky top-24 z-40 border border-white/10 bg-black/40 backdrop-blur-xl px-6 py-4 flex items-center justify-between rounded-2xl mx-6 shadow-lg">
-        <div className="flex items-center space-x-4">
-            <Link href="/" className="flex items-center text-zinc-400 hover:text-white transition-colors">
-                <ArrowLeft className="w-4 h-4 mr-2" /> Back to Search
+      <div className="flex justify-center mt-24 mb-8 relative z-40">
+        <div className="flex items-center space-x-1 bg-black/40 border border-white/10 rounded-full p-1.5 backdrop-blur-xl shadow-xl">
+            <Link href="/" className="flex items-center px-4 py-2 rounded-full text-sm font-medium text-zinc-400 hover:bg-white/10 hover:text-white transition-all">
+                <ArrowLeft className="w-4 h-4 mr-2" /> Search
             </Link>
-            <Link href="/dashboard/portfolio" className="flex items-center text-sm font-medium text-zinc-400 hover:text-white transition-colors">
-                <FileText className="w-4 h-4 mr-2" /> My Portfolio
+            <Link href="/dashboard/portfolio" className="flex items-center px-4 py-2 rounded-full text-sm font-medium text-zinc-400 hover:bg-white/10 hover:text-white transition-all">
+                <FileText className="w-4 h-4 mr-2" /> Portfolio
             </Link>
-        </div>
-        <div className="flex items-center space-x-4">
-            <button className="flex items-center text-sm font-medium text-zinc-400 hover:text-white transition-colors">
+            <div className="w-px h-4 bg-white/10 mx-2" />
+            <button className="flex items-center px-4 py-2 rounded-full text-sm font-medium text-zinc-400 hover:bg-white/10 hover:text-white transition-all">
                 <Share2 className="w-4 h-4 mr-2" /> Share
             </button>
             {data && (
@@ -189,9 +188,9 @@ export default function DashboardClient() {
               >
                 {/* @ts-ignore */}
                 {({ blob, url, loading, error }) => (
-                  <button className="flex items-center text-sm font-bold bg-white text-black px-4 py-2 rounded-lg hover:bg-zinc-200 transition-colors">
+                  <button className="flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-black hover:bg-zinc-200 transition-all shadow-lg">
                     <Download className="w-4 h-4 mr-2" /> 
-                    {loading ? 'Preparing...' : 'Export PDF'}
+                    {loading ? 'Preparing...' : 'Export'}
                   </button>
                 )}
               </PDFDownloadLink>
