@@ -29,11 +29,10 @@ def health_check():
     return {"status": "ok"}
 
 # --- CORS Configuration ---
-origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
-
+# For production, replace ["*"] with your actual frontend domain(s)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
